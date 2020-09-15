@@ -13,6 +13,11 @@ namespace MyRobotsDinosaursGame
         public int attackPower;
 
         // constructor (SPAWN)
+        public Weapon()
+        {
+            type = "Sword";
+            attackPower = 10;
+        }
 
         // member methods (CAN DO)
     }

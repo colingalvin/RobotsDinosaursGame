@@ -15,6 +15,13 @@ namespace MyRobotsDinosaursGame
         public Weapon weapon;
 
         // constructor (SPAWN)
+        public Robot(string name)
+        {
+            this.name = name;
+            health = 100;
+            powerLevel = 10;
+            weapon = new Weapon();
+        }
 
         // member methods (CAN DO)
     }

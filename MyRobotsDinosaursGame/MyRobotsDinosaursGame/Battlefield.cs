@@ -13,5 +13,10 @@ namespace MyRobotsDinosaursGame
         // constructor (SPAWN)
 
         // member methods (CAN DO)
+        public void DoBattle()
+        {
+            Herd dinosaurs = new Herd(); // Instantiate herd (list) of Dinosaur objects
+            Fleet robots = new Fleet(); // Instantiate fleet (list) of Robot objects
+        }
     }
 }
