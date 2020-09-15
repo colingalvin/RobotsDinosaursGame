@@ -10,12 +10,14 @@ namespace MyRobotsDinosaursGame
     class Dinosaur
     {
         // member variables (HAS A)
+
         public string type;
         public int health;
         public int energy;
         public int attackPower;
 
         // constructor (SPAWN)
+
         public Dinosaur(string type, int health, int energy)
         {
             this.type = type;
@@ -29,8 +31,9 @@ namespace MyRobotsDinosaursGame
         {
             Console.WriteLine("Choose your attack:\n1) Bite (does 10 damage, costs 10 energy)\n2) Stomp (5 damage, costs 5 energy)");
             string userInput = Console.ReadLine();
-            // Add verification
-            switch(userInput)
+            // Verify
+            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 2);
+            switch (validUserInput)
             {
                 case "1":
                     energy -= 10; // Dinosaur spends energy according to attack choice;

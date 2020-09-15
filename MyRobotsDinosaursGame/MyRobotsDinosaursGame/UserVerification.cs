@@ -8,17 +8,18 @@ namespace MyRobotsDinosaursGame
 {
     class UserVerification
     {
-        public static bool VerifyInput(int userInput, int start, int end)
-            // Take user input and start/ending 
+        public static string VerifySwitchCase(string userInput, int start, int end)
+            // Take user input and acceptable start/ending of input range
         {
-            bool isValidInput = false;
-            while(userInput < start || userInput > end)
+            int userInputInt = int.Parse(userInput);
+            string validInput;
+            while(userInputInt < start || userInputInt > end)
             {
                 Console.Write("Invalid choice. Please try again: ");
-                userInput = int.Parse(Console.ReadLine());
+                userInputInt = int.Parse(Console.ReadLine());
             }
-            isValidInput = true;
-            return isValidInput;
+            validInput = Convert.ToString(userInputInt);
+            return validInput;
         }
     }
 }

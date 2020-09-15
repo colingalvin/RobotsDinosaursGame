@@ -9,30 +9,34 @@ namespace MyRobotsDinosaursGame
     class Herd
     {
         // member variables (HAS A)
+
         public Dinosaur dinosaur1; // Herd contains 3 dinosaur objects
         public Dinosaur dinosaur2;
         public Dinosaur dinosaur3;
-        bool verified;
 
         // constructor (SPAWN)
+
         public Herd()
         {
-            Console.WriteLine($"1) T-Rex / health: 100 / energy: 50.\n2) Veliciraptor / health: 50 / energy: 100\n3) Triceratops / health: 200/ energy: 25");
+            Console.WriteLine($"1) T-Rex / health: 100 / energy: 50.\n2) Veliciraptor / health: 50 / energy: 100\n3) Triceratops / health: 200/ energy: 25\n");
             
             Console.Write("Choose the first dinosaur in your herd:"); // User chooses which dinosaur to add to herd
             string userInput = Console.ReadLine();
-            // Add verification
-            dinosaur1 = ChooseDinosaurType(userInput); // take returned dinosaur and assign
+            // Verify
+            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+            dinosaur1 = ChooseDinosaurType(validUserInput); // take returned dinosaur and assign
 
             Console.Write("Choose the second dinosaur in your herd:"); // Choose dinosaur type
             userInput = Console.ReadLine();
-            // Add verification
-            dinosaur2 = ChooseDinosaurType(userInput); // Assign
+            // Verify
+            validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+            dinosaur2 = ChooseDinosaurType(validUserInput); // Assign
             
             Console.Write("Choose the third dinosaur in your herd:"); // Choose dinosaur type
             userInput = Console.ReadLine();
-            // Add verification
-            dinosaur3 = ChooseDinosaurType(userInput); // Assign
+            // Verify
+            validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+            dinosaur3 = ChooseDinosaurType(validUserInput); // Assign
         }
 
         // member methods (CAN DO)
@@ -55,20 +59,22 @@ namespace MyRobotsDinosaursGame
             }
             return dinosaur; // return dinosaur to constructor
         }
+
         public void ChooseOpponent(Fleet fleet)
         {
-            // Add verification
-
-            string userInput;
             // Dinosaurs go first, switch case to choose which dinosaur attacks which robot
             Console.WriteLine($"Choose dinosaur:\n1) {dinosaur1.type}\n2) {dinosaur2.type}\n3) {dinosaur3.type}");
-            userInput = Console.ReadLine();
-            switch (userInput)
+            string userInput = Console.ReadLine();
+            // Verify
+            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+            switch (validUserInput)
             {
                 case "1":
                     Console.WriteLine($"Choose robot to attack:\n1) {fleet.robot1.name}\n2) {fleet.robot2.name}\n3) {fleet.robot3.name}");
                     userInput = Console.ReadLine();
-                    switch (userInput)
+                    // Verify
+                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    switch (validUserInput)
                     {
                         case "1":
                             dinosaur1.Attack(fleet.robot1);
@@ -84,7 +90,9 @@ namespace MyRobotsDinosaursGame
                 case "2":
                     Console.WriteLine($"Choose robot to attack:\n1) {fleet.robot1.name}\n2) {fleet.robot2.name}\n3) {fleet.robot3.name}");
                     userInput = Console.ReadLine();
-                    switch (userInput)
+                    // Verify
+                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    switch (validUserInput)
                     {
                         case "1":
                             dinosaur2.Attack(fleet.robot1);
@@ -100,7 +108,9 @@ namespace MyRobotsDinosaursGame
                 case "3":
                     Console.WriteLine($"Choose robot to attack:\n1) {fleet.robot1.name}\n2) {fleet.robot2.name}\n3) {fleet.robot3.name}");
                     userInput = Console.ReadLine();
-                    switch (userInput)
+                    // Verify
+                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    switch (validUserInput)
                     {
                         case "1":
                             dinosaur3.Attack(fleet.robot1);
