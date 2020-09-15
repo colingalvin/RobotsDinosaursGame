@@ -9,16 +9,22 @@ namespace MyRobotsDinosaursGame
     class Battlefield
     {
         // member variables (HAS A)
+        public Herd herd;
+        public Fleet fleet;
 
         // constructor (SPAWN)
+        public Battlefield()
+        {
+            herd = new Herd(); // Instantiate herd (list) of Dinosaur objects
+            fleet = new Fleet(); // Instantiate fleet (list) of Robot objects
+        }
 
         // member methods (CAN DO)
         public void DoBattle()
         {
-            Herd dinosaurs = new Herd(); // Instantiate herd (list) of Dinosaur objects
-            Fleet robots = new Fleet(); // Instantiate fleet (list) of Robot objects
-            dinosaurs.dinosaur1.Attack(robots.robot1);
-            robots.robot2.Attack(dinosaurs.dinosaur2);
+            herd.dinosaur1.Attack(fleet.robot1);
+            herd.dinosaur2.Attack(fleet.robot2);
+            herd.dinosaur3.Attack(fleet.robot3);
         }
     }
 }
