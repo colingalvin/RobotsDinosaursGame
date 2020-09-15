@@ -25,5 +25,11 @@ namespace MyRobotsDinosaursGame
         }
 
         // member methods (CAN DO)
+
+        public void Attack(Robot robot)
+        {
+            energy -= 10; // Dinosaur spends 10 energy to attack
+            robot.health -= attackPower; // Robot takes damage equivalent to dinosaur attack power;
+        }
     }
 }

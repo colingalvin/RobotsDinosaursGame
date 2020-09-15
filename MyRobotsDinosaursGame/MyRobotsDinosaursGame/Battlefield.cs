@@ -17,6 +17,8 @@ namespace MyRobotsDinosaursGame
         {
             Herd dinosaurs = new Herd(); // Instantiate herd (list) of Dinosaur objects
             Fleet robots = new Fleet(); // Instantiate fleet (list) of Robot objects
+            dinosaurs.dinosaur1.Attack(robots.robot1);
+            robots.robot2.Attack(dinosaurs.dinosaur2);
         }
     }
 }
