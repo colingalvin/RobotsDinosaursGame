@@ -20,6 +20,7 @@ namespace MyRobotsDinosaursGame
             this.name = name;
             health = 100;
             powerLevel = 10;
+            Console.WriteLine($"Choose a weapon for {name}:");
             weapon = new Weapon();
         }
 

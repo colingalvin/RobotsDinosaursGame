@@ -21,7 +21,6 @@ namespace MyRobotsDinosaursGame
             this.type = type;
             health = 100;
             energy = 100;
-            attackPower = 10;
         }
 
         // member methods (CAN DO)
