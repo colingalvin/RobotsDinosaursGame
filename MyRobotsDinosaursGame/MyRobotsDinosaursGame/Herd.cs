@@ -12,31 +12,36 @@ namespace MyRobotsDinosaursGame
         public Dinosaur dinosaur1; // Herd contains 3 dinosaur objects
         public Dinosaur dinosaur2;
         public Dinosaur dinosaur3;
+        bool verified;
 
         // constructor (SPAWN)
         public Herd()
         {
             Console.WriteLine($"1) T-Rex / health: 100 / energy: 50.\n2) Veliciraptor / health: 50 / energy: 100\n3) Triceratops / health: 200/ energy: 25");
-            Console.Write("Choose the first dinosaur in your herd:");
+            
+            Console.Write("Choose the first dinosaur in your herd:"); // User chooses which dinosaur to add to herd
             string userInput = Console.ReadLine();
-            dinosaur1 = ChooseDinosaurType(userInput);
-            Console.Write("Choose the second dinosaur in your herd:");
+            // Add verification
+            dinosaur1 = ChooseDinosaurType(userInput); // take returned dinosaur and assign
+
+            Console.Write("Choose the second dinosaur in your herd:"); // Choose dinosaur type
             userInput = Console.ReadLine();
-            dinosaur2 = ChooseDinosaurType(userInput);
-            Console.Write("Choose the third dinosaur in your herd:");
+            // Add verification
+            dinosaur2 = ChooseDinosaurType(userInput); // Assign
+            
+            Console.Write("Choose the third dinosaur in your herd:"); // Choose dinosaur type
             userInput = Console.ReadLine();
-            dinosaur3 = ChooseDinosaurType(userInput);
+            // Add verification
+            dinosaur3 = ChooseDinosaurType(userInput); // Assign
         }
 
         // member methods (CAN DO)
 
         public Dinosaur ChooseDinosaurType(string userInput)
         {
-            // take in user input
-            // construct appropriate dinosaur
-            // return dinosaur
+            // user input already verified in constructor
             Dinosaur dinosaur = null;
-            switch (userInput)
+            switch (userInput) // user input determines type of dinosaur constructed
             {
                 case "1":
                     dinosaur = new Dinosaur("TRex", 100, 50); // Instantiate each object with separate variable attributes
@@ -48,10 +53,12 @@ namespace MyRobotsDinosaursGame
                     dinosaur = new Dinosaur("Triceratops", 200, 25);
                     break;
             }
-            return dinosaur;
+            return dinosaur; // return dinosaur to constructor
         }
         public void ChooseOpponent(Fleet fleet)
         {
+            // Add verification
+
             string userInput;
             // Dinosaurs go first, switch case to choose which dinosaur attacks which robot
             Console.WriteLine($"Choose dinosaur:\n1) {dinosaur1.type}\n2) {dinosaur2.type}\n3) {dinosaur3.type}");

@@ -35,11 +35,13 @@ namespace MyRobotsDinosaursGame
             string userInput;
             Console.WriteLine($"Choose robot:\n1) {robot1.name}\n2) {robot2.name}\n3) {robot3.name}");
             userInput = Console.ReadLine();
+            // Add verification
             switch (userInput)
             {
                 case "1":
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
+                    // Add verification
                     switch (userInput)
                     {
                         case "1":
@@ -56,6 +58,7 @@ namespace MyRobotsDinosaursGame
                 case "2":
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
+                    // Add verification
                     switch (userInput)
                     {
                         case "1":
@@ -72,6 +75,7 @@ namespace MyRobotsDinosaursGame
                 case "3":
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
+                    // Add verification
                     switch (userInput)
                     {
                         case "1":

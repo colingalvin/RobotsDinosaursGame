@@ -22,13 +22,11 @@ namespace MyRobotsDinosaursGame
         // member methods (CAN DO)
         public void DoBattle()
         {
-            DisplayStats();
-            // Dinosaurs go first
-            herd.ChooseOpponent(fleet);
+            DisplayStats(); // Clear console, display health stats before each round
+            herd.ChooseOpponent(fleet); // Dinosaurs go first
             DisplayStats();
             fleet.ChooseOpponent(herd);
             // Add if statement to see if any robots are actually capable of attacking
-            // Switch case to choose which robot attacks which dinosaur
         }
 
         public void DisplayStats()
@@ -36,6 +34,7 @@ namespace MyRobotsDinosaursGame
             Console.Clear();
             Console.WriteLine($"Dinosaur health:\n{herd.dinosaur1.type}: {herd.dinosaur1.health}\n{herd.dinosaur2.type}: {herd.dinosaur2.health}\n{herd.dinosaur3.type}: {herd.dinosaur3.health}\n");
             Console.WriteLine($"Robot power:\n{fleet.robot1.name}: {fleet.robot1.health}\n{fleet.robot2.name}: {fleet.robot2.health}\n{fleet.robot3.name}: {fleet.robot3.health}\n");
+            // Add more stats to be displayed (when unique dinosaurs have unique attacks)
         }
     }
 }

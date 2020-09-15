@@ -29,6 +29,7 @@ namespace MyRobotsDinosaursGame
         {
             Console.WriteLine("Choose your attack:\n1) Bite (does 10 damage, costs 10 energy)\n2) Stomp (5 damage, costs 5 energy)");
             string userInput = Console.ReadLine();
+            // Add verification
             switch(userInput)
             {
                 case "1":
