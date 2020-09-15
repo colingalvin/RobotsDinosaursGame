@@ -15,7 +15,7 @@ namespace MyRobotsDinosaursGame
         // constructor (SPAWN)
         public Weapon()
         {
-            Console.WriteLine("1) Sword(power:10)\n2) Battle Axe(power: 15)");
+            Console.WriteLine("1) Sword (power:10)\n2) Battle Axe (power: 15)");
             Console.Write("Enter the number of your robot's weapon: ");
             string userInput = Console.ReadLine();
             switch(userInput) // choose which weapon each robot has

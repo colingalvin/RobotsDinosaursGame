@@ -28,8 +28,19 @@ namespace MyRobotsDinosaursGame
 
         public void Attack(Robot robot)
         {
-            energy -= 10; // Dinosaur spends 10 energy to attack
-            robot.health -= attackPower; // Robot takes damage equivalent to dinosaur attack power;
+            Console.WriteLine("Choose your attack:\n1) Bite (does 10 damage, costs 10 energy)\n2) Stomp (5 damage, costs 5 energy)");
+            string userInput = Console.ReadLine();
+            switch(userInput)
+            {
+                case "1":
+                    energy -= 10; // Dinosaur spends energy according to attack choice;
+                    robot.health -= 10; // Robot takes damage according to dinosaur attack choice;
+                    break;
+                case "2":
+                    energy -= 5;
+                    robot.health -= 5;
+                    break;
+            }
         }
     }
 }
