@@ -16,11 +16,11 @@ namespace MyRobotsDinosaursGame
         public int attackPower;
 
         // constructor (SPAWN)
-        public Dinosaur(string type)
+        public Dinosaur(string type, int health, int energy)
         {
             this.type = type;
-            health = 100;
-            energy = 100;
+            this.health = health;
+            this.energy = energy;
         }
 
         // member methods (CAN DO)

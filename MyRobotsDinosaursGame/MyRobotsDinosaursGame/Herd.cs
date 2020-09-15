@@ -16,12 +16,40 @@ namespace MyRobotsDinosaursGame
         // constructor (SPAWN)
         public Herd()
         {
-            dinosaur1 = new Dinosaur("TRex"); // Instantiate each object with separate variable attributes
-            dinosaur2 = new Dinosaur("Velociraptor");
-            dinosaur3 = new Dinosaur("Triceratops");
+            Console.WriteLine($"1) T-Rex / health: 100 / energy: 50.\n2) Veliciraptor / health: 50 / energy: 100\n3) Triceratops / health: 200/ energy: 25");
+            Console.Write("Choose the first dinosaur in your herd:");
+            string userInput = Console.ReadLine();
+            dinosaur1 = ChooseDinosaurType(userInput);
+            Console.Write("Choose the second dinosaur in your herd:");
+            userInput = Console.ReadLine();
+            dinosaur2 = ChooseDinosaurType(userInput);
+            Console.Write("Choose the third dinosaur in your herd:");
+            userInput = Console.ReadLine();
+            dinosaur3 = ChooseDinosaurType(userInput);
         }
 
         // member methods (CAN DO)
+
+        public Dinosaur ChooseDinosaurType(string userInput)
+        {
+            // take in user input
+            // construct appropriate dinosaur
+            // return dinosaur
+            Dinosaur dinosaur = null;
+            switch (userInput)
+            {
+                case "1":
+                    dinosaur = new Dinosaur("TRex", 100, 50); // Instantiate each object with separate variable attributes
+                    break;
+                case "2":
+                    dinosaur = new Dinosaur("Velociraptor", 50, 100);
+                    break;
+                case "3":
+                    dinosaur = new Dinosaur("Triceratops", 200, 25);
+                    break;
+            }
+            return dinosaur;
+        }
         public void ChooseOpponent(Fleet fleet)
         {
             string userInput;
