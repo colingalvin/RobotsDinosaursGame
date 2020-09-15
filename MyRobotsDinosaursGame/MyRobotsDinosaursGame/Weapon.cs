@@ -8,5 +8,12 @@ namespace MyRobotsDinosaursGame
 {
     class Weapon
     {
+        // member variables (HAS A)
+        public string type;
+        public int attackPower;
+
+        // constructor (SPAWN)
+
+        // member methods (CAN DO)
     }
 }

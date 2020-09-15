@@ -8,5 +8,10 @@ namespace MyRobotsDinosaursGame
 {
     class Herd
     {
+        // member variables (HAS A)
+
+        // constructor (SPAWN)
+
+        // member methods (CAN DO)
     }
 }
