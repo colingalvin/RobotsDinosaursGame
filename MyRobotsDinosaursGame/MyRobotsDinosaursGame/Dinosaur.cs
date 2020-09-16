@@ -14,7 +14,7 @@ namespace MyRobotsDinosaursGame
         public string type;
         public int health;
         public int energy;
-        public int attackPower;
+        public bool isAlive;
 
         // constructor (SPAWN)
 
@@ -23,6 +23,7 @@ namespace MyRobotsDinosaursGame
             this.type = type;
             this.health = health;
             this.energy = energy;
+            isAlive = true;
         }
 
         // member methods (CAN DO)
@@ -32,7 +33,7 @@ namespace MyRobotsDinosaursGame
             Console.WriteLine("Choose your attack:\n1) Bite (does 10 damage, costs 10 energy)\n2) Stomp (5 damage, costs 5 energy)");
             string userInput = Console.ReadLine();
             // Verify
-            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 2);
+            string validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 2);
             switch (validUserInput)
             {
                 case "1":
@@ -45,7 +46,5 @@ namespace MyRobotsDinosaursGame
                     break;
             }
         }
-
-        
     }
 }

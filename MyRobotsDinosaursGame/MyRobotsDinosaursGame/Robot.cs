@@ -14,6 +14,7 @@ namespace MyRobotsDinosaursGame
         public int health;
         public int powerLevel;
         public Weapon weapon;
+        public bool hasPower;
 
         // constructor (SPAWN)
 
@@ -24,6 +25,7 @@ namespace MyRobotsDinosaursGame
             powerLevel = 10;
             Console.WriteLine($"Choose a weapon for {name}:");
             weapon = new Weapon();
+            hasPower = true;
         }
 
         // member methods (CAN DO)

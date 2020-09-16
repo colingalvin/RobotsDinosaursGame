@@ -20,7 +20,7 @@ namespace MyRobotsDinosaursGame
             Console.WriteLine("1) Sword (power: 10)\n2) Battle Axe (power: 15)");
             string userInput = Console.ReadLine();
             // Verify
-            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 2);
+            string validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 2);
             switch (validUserInput) // choose which weapon each robot has
             {
                 case "1":

@@ -38,24 +38,28 @@ namespace MyRobotsDinosaursGame
             Console.WriteLine($"Choose robot:\n1) {robot1.name}\n2) {robot2.name}\n3) {robot3.name}");
             string userInput = Console.ReadLine();
             // Verify
-            string validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+            string validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 3);
             switch (validUserInput)
             {
                 case "1":
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
                     // Verify
-                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 3);
+                    // Verify that robot has power (is alive)
                     switch (validUserInput)
                     {
                         case "1":
                             robot1.Attack(herd.dinosaur1);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur1);
                             break;
                         case "2":
                             robot1.Attack(herd.dinosaur2);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur1);
                             break;
                         case "3":
                             robot1.Attack(herd.dinosaur3);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur1);
                             break;
                     }
                     break;
@@ -63,17 +67,20 @@ namespace MyRobotsDinosaursGame
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
                     // Verify
-                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 3);
                     switch (validUserInput)
                     {
                         case "1":
                             robot2.Attack(herd.dinosaur1);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur2);
                             break;
                         case "2":
                             robot2.Attack(herd.dinosaur2);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur2);
                             break;
                         case "3":
                             robot2.Attack(herd.dinosaur2);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur2);
                             break;
                     }
                     break;
@@ -81,17 +88,20 @@ namespace MyRobotsDinosaursGame
                     Console.WriteLine($"Choose dinosaur to attack:\n1) {herd.dinosaur1.type}\n2) {herd.dinosaur2.type}\n3) {herd.dinosaur3.type}");
                     userInput = Console.ReadLine();
                     // Verify
-                    validUserInput = UserVerification.VerifySwitchCase(userInput, 1, 3);
+                    validUserInput = GameVerification.VerifySwitchCase(userInput, 1, 3);
                     switch (validUserInput)
                     {
                         case "1":
                             robot3.Attack(herd.dinosaur1);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur3);
                             break;
                         case "2":
                             robot3.Attack(herd.dinosaur2);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur3);
                             break;
                         case "3":
                             robot3.Attack(herd.dinosaur3);
+                            GameVerification.CheckIfDinosaurIsDead(herd.dinosaur3);
                             break;
                     }
                     break;
